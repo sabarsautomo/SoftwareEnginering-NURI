@@ -1,19 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('One') {
+        stage('Tahap Persiapan') {
                 steps {
-                        echo 'Hi, this is Zulaikha from edureka'
+                        echo 'Proses cek progress...'
 			
                 }
         }
-	    stage('Two'){
+	    stage('Tahap I'){
 		    
 		steps {
-			input('Do you want to proceed?')
+			input('Apakah akan diproses?')
         }
 	    }
-        stage('Three') {
+        stage('Tahap II') {
                 when {
                         not {
                                 branch "master"
@@ -23,7 +23,7 @@ pipeline {
 			echo "Hello"
                         }
         }
-        stage('Four') {
+        stage('Tahap III') {
                 parallel {
                         stage('Unit Test') {
                                 steps{
